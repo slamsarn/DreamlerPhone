@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ImageView
+      android:src="@drawable/icon"
+      android:layout_width="match_parent"
+      android:layout_height="81.5dp"
+      android:id="@+id/imgLoginLogo" />
+  <EditText
+      android:id="@+id/tbxEmail"
+      android:inputType="textEmailAddress"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:editable="true"
+      android:enabled="true"
+      android:hint="Email"
+      android:maxLines="1"
+      android:maxLength="100"
+      android:textIsSelectable="true"
+      android:text="glenn@zayas.se" />
+  <EditText
+      android:inputType="textPassword"
+      android:id="@+id/tbxPassword"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:editable="true"
+      android:enabled="true"
+      android:hint="Password"
+      android:maxLines="1"
+      android:maxLength="100"
+      android:textIsSelectable="true"
+      android:text="glenn" />
+  <Button
+      android:id="@+id/btnLogin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/btnLogin" />
+  <TextView
+      android:text=""
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/txtTest"
+      android:layout_marginBottom="75.0dp" />
+</LinearLayout>
