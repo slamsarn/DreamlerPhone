@@ -4,7 +4,7 @@ using DreamlerPhone.ViewModels;
 using System.Net.Http;
 
 namespace DreamlerPhone {
-    public class LoginView : ContentPage {
+    public partial class LoginPage : ContentPage {
 
         public static Com Com { get; set; }
 
@@ -13,23 +13,24 @@ namespace DreamlerPhone {
         private Label   _lblFeedback;
         private Button  _btnLogin;
 
-        public LoginView() {
-            BindingContext  = new LoginVM();
-            _ebxUsername    = new Entry { Placeholder = "Username", VerticalOptions = LayoutOptions.Center };            
-            _ebxPassword    = new Entry { Placeholder = "Password", VerticalOptions = LayoutOptions.Center, IsPassword = true };            
-            _lblFeedback    = new Label { TextColor = Color.Aqua, VerticalOptions = LayoutOptions.Center };
-            _btnLogin       = new Button { Text = "Login", IsEnabled = true };
+        public LoginPage() {
+            Com = new Com();
+            BindingContext = new LoginVM();
+            _ebxUsername = new Entry { Placeholder = "Username", VerticalOptions = LayoutOptions.Center };
+            _ebxPassword = new Entry { Placeholder = "Password", VerticalOptions = LayoutOptions.Center, IsPassword = true };
+            _lblFeedback = new Label { TextColor = Color.Aqua, VerticalOptions = LayoutOptions.Center };
+            _btnLogin = new Button { Text = "Login", IsEnabled = true };
 
             _btnLogin.Clicked += OnButtonClick;
 
             _ebxUsername.SetBinding( Entry.TextProperty, "UsernameText" );
             _ebxPassword.SetBinding( Entry.TextProperty, "PasswordText" );
-            _lblFeedback.SetBinding( Label.TextProperty, "FeedbackText" );            
+            _lblFeedback.SetBinding( Label.TextProperty, "FeedbackText" );
 
-            Content         = new StackLayout {
-                Padding     = 20,
+            Content = new StackLayout {
+                Padding = 20,
                 VerticalOptions = LayoutOptions.Center,
-                Children    = { _ebxUsername, _ebxPassword, _btnLogin, _lblFeedback }
+                Children = { _ebxUsername, _ebxPassword, _btnLogin, _lblFeedback }
             };
         }
 
@@ -54,7 +55,7 @@ namespace DreamlerPhone {
                     _lblFeedback.Text = "Invalid email or password";
                 }
             } catch ( HttpRequestException httpRequestEx ) {
-                _lblFeedback.Text = httpRequestEx.InnerException.ToString();
+                _lblFeedback.Text = httpRequestEx.ToString();
             } catch ( Exception ex ) {
                 _lblFeedback.Text = ex.ToString();
             }

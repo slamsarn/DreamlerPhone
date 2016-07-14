@@ -10,6 +10,6 @@
     <Entry    Text="{Binding UsernameText}" Placeholder="Username" />
     <Entry    Text="{Binding PasswordText}" Placeholder="Password" IsPassword="true" />
     <Button   Text="Login" Clicked="OnButtonClick" />
-    <Label    Text="{Binding FeedbackText}"/>
+    <Label    Text="{Binding FeedbackText}" />
   </StackLayout>
 </ContentPage>

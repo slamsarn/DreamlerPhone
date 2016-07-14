@@ -39,9 +39,10 @@
     <Compile Include="Com.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\LoginVM.cs" />
-    <Compile Include="Views\Login.cs" />
+    <Compile Include="Views\LoginPage.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\DreamUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,10 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

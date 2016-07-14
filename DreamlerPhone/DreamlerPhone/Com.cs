@@ -1,5 +1,5 @@
 ﻿using DreamlerPhone.Models;
-using DreamlerPhone.ViewModels;
+//using DreamlerPhone.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -30,14 +30,13 @@ namespace DreamlerPhone
             _httpClient = new HttpClient(_hcHandler) { BaseAddress = TestEnvUri };
             
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add( "User-Agent", "drcl/1.9 (win;)" ); //( new ProductInfoHeaderValue( new ProductHeaderValue( "drcl", "1.9" ) ) );
+            _httpClient.DefaultRequestHeaders.Add( "User-Agent", "drcl/1.9 (win;)" );
             _httpClient.DefaultRequestHeaders.Host = "dreamlerstaging.azurewebsites.net";
-            //when running local Host sohuld be set to "web.local"
         }
 
         public async Task<DreamUser> Login (string email, string password){
             try {
-                var loginModel = new LoginVM { UsernameText = email, PasswordText = password };
+                var loginModel = new LoginModel { Email = email, Password = password };
                 var response = await Post(LoginUrl, loginModel);
                 if ( response.IsSuccessStatusCode ) {
                     User = JsonConvert.DeserializeObject<DreamUser>( await response.Content.ReadAsStringAsync() );

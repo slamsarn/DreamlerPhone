@@ -8,7 +8,7 @@ using DreamlerPhone;
 
 namespace DreamlerPhone {
     public class App : Application {
-        public static Com Com { get; set; }
+        //public static Com Com { get; set; }
         public App() {
             MainPage = new LoginPage();
         }
