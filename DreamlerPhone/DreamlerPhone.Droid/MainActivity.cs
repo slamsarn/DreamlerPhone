@@ -20,12 +20,16 @@ namespace DreamlerPhone.Droid {
         protected override void OnCreate( Bundle bundle ) {
 
             ServicePointManager.ServerCertificateValidationCallback += ( sender, cert, chain, sslPolicyErrors ) => true;
+
             base.OnCreate( bundle );
 
             global::Xamarin.Forms.Forms.Init( this, bundle );
 
             LoadApplication( new App() );
-            
+            #region XamarinAndroidImpl
+            //Comment out LoadApplication above
+            //Uncomment ButtonOnClick below
+
             //Com = new DreamlerPhone.Com();
 
             //SetContentView( Resource.Layout.LoginPage );
@@ -38,10 +42,10 @@ namespace DreamlerPhone.Droid {
 
             //global::Xamarin.Forms.Forms.Init( this, bundle );
 
-    
+
             //LoadApplication( new App() );
+            #endregion
         }
-        
         //private async void ButtonOnClick( object sender, EventArgs e ) {
         //    try {
         //        var userName = FindViewById<EditText>(Resource.Id.tbxEmail).Text;
@@ -63,7 +67,7 @@ namespace DreamlerPhone.Droid {
         //    } catch ( Exception ex ) {
         //        txtText.Text = ex.ToString();
         //    }
-        //}        
+        //}     
     }
 }
 

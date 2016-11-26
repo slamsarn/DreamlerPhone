@@ -11,6 +11,7 @@ namespace DreamlerPhone {
         //public static Com Com { get; set; }
         public App() {
             MainPage = new LoginPage();
+
         }
 
         protected override void OnStart() {

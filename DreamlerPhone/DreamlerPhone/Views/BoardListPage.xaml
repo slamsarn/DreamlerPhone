@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DreamlerPhone.Views.BoardListPage"
+             xmlns:local="clr-namespace:XamarinForms;assembly=XamarinForms">
+  <StackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
+    <StackLayout.BindingContext>
+      <local:BoardListVM/>
+    </StackLayout.BindingContext>
+    <CustomViewCell>
+      <Image BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Source="{Binding ProjectImageSource}"/>
+      <Label Text="{Binding ProjectNameText}" />
+    </CustomViewCell>
+  </StackLayout>
+
+</ContentPage>

@@ -9,7 +9,7 @@
     </StackLayout.BindingContext>
     <Entry    Text="{Binding UsernameText}" Placeholder="Username" />
     <Entry    Text="{Binding PasswordText}" Placeholder="Password" IsPassword="true" />
-    <Button   Text="Login" Clicked="OnButtonClick" />
+    <Button   Text="Login" Clicked="OnButtonClick" />C:\Users\Martin\Dropbox\Dreamler\DreamlerPhone\DreamlerPhone\DreamlerPhone\Views\LoginPage.xaml
     <Label    Text="{Binding FeedbackText}" />
   </StackLayout>
 </ContentPage>
